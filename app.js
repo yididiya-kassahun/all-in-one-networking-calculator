@@ -16,12 +16,12 @@ const webRoute = require("./routes/webRoute");
 
 const app = express();
 
-app.use(express.static(path.join(__dirname, "public")));
-
 app.set("view engine", "ejs");
 app.set("views", "views");
 
 app.use(bodyParser.urlencoded({ extended: false })); // parsing body
+app.use(express.static(path.join(__dirname, "public")));
+// app.use(express.static(path.join(__dirname, "public/css")));
 
 app.use(homeRoute);
 app.use(ipRoute);

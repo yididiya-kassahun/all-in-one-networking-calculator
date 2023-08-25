@@ -1,12 +1,54 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>binary calculator page</title>
-</head>
+<%- include('./includes/head.ejs') %>
+
 <body>
-    <h2>binary calculator page</h2>
-</body>
-</html>
+    <div class="container">
+        <div class="row" style="margin-top: 5%;">
+            <h2>Binary Calculator</h2>
+            <hr>
+            <div class="card shadow-sm p-3 mb-5 bg-white rounded">
+                
+                            <div class="card-header">
+                                <h3>Convert Binary Value to Decimal Value</h3>
+                                </div>
+                                <div class="card-body">
+                                    <div class="form-check form-check-inline">
+                                        <div class="row">
+                                            <label class="col" for="">Binary Value</label>
+                                            <input class="form-control col" type="text" placeholder="100110101"/>
+                                          
+                                        </div>
+        
+                                        <div style="align-items: center;">
+                                            <button class="btn btn-info">Calculate</button>
+                                        </div>
+                                      </div>
+                                </div>
+                            </div>
+                    
+            </div>
+
+            <div class="row">
+                <div class="card shadow-sm p-3 mb-5 bg-white rounded">
+                    
+                                <div class="card-header">
+                                    <h3>Convert Decimal Value to Binary Value</h3>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="form-check form-check-inline">
+                                            <div class="row">
+                                                <label class="col" for="">Decimal Value</label>
+                                                <input class="form-control col" type="text" placeholder="167"/>
+                                              
+                                            </div>
+            
+                                            <div style="align-items: center;">
+                                                <button class="btn btn-info">Calculate</button>
+                                            </div>
+                                          </div>
+                                    </div>
+                                </div>
+                        
+                </div>
+        </div>
+
+<%- include('./includes/end.ejs') %>

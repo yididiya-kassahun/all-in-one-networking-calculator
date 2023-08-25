@@ -1,12 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>web bandwidth calculator page</title>
-</head>
+<%- include('./includes/head.ejs') %>
+
 <body>
-    <h2>web bandwidth calculator page</h2>
-</body>
-</html>
+    <div class="container">
+        <div class="row" style="margin-top: 5%;">
+            <div class="card shadow-sm p-3 mb-5 bg-white rounded">
+                
+                            <div class="card-header">
+                                <h3>web bandwidth calculator page</h3>
+                                </div>
+                                <div class="card-body">
+                                    <div class="form-check form-check-inline">
+                                        <div class="row">
+                                            <label class="col" for="">File Size</label>
+                                            <input class="form-control col" type="text" placeholder="500"/>
+                                            <select name="" id="" class="col" style="margin-left: 10px;">
+                                                <option value="">Byte (B)</option>
+                                                <option value="">KiloByte (KB)</option>
+                                                <option value="">MegaByte (MB)</option>
+                                                <option value="">GigaByte (GB)</option>
+                                            </select>
+                                        </div>
+                                        <div class="row" style="margin-top: 10px;">
+                                            <label class="col" for="">Bandwidth</label>
+                                            <input class="form-control col" type="text" placeholder="5"/>
+                                            <select name="" id="" class="col" style="margin-left: 10px;">
+                                                <option value="">bit/s</option>
+                                                <option value="">Kbit/s</option>
+                                                <option value="">Mbit/s</option>
+                                                <option value="">Gbit/s</option>
+                                            </select>
+                                        </div>
+                                        <divt style="align-items: center;">
+                                            <button class="btn btn-info">Calculate</button>
+                                        </div>
+                                      </div>
+                                </div>
+                            </div>
+                    
+            </div>
+        </div>
+<%- include('./includes/end.ejs') %>

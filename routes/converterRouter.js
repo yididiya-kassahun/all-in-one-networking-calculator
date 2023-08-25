@@ -1,8 +1,8 @@
-// const express = require("express");
+const express = require("express");
 
-// const converterController = require("../controllers/");
-// const router = express.Router();
+const converterController = require("../controllers/");
+const router = express.Router();
 
-// router.get('/binary', binaryController.binaryPage);
+router.get('/binary', binaryController.binaryPage);
 
-// module.exports = router;
+module.exports = router;

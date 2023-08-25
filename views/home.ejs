@@ -1,12 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>home page</title>
-</head>
+<%- include('./includes/head.ejs') %>
+
 <body>
-    <h2>home page</h2>
-</body>
-</html>
+    <div>
+        <img src="../img/calculator.png" class="rounded mx-auto d-block" alt="calculator" width="500px" height="500px">
+    </div>
+    <h2 class="text-center">All In One Networking Calculator</h2>
+
+    <div class="row" style="margin-left: 450px;">
+        <div class="col-lg-9 col-md-12">
+            <div class="btn-demo-notika mg-t-10">
+               
+                <div class="button-icon-btn">
+                    <a class="btn text-white" style="background-color: #3b5998;" href="/ip" role="button">
+                        <i class="fas fa-calculator"></i>
+                    IPv4 Calculator  </a>
+                    <a class="btn btn-secondary btn-info" href="/ip"><i class="fab fa-calculator"></i> IPv6 Subnet Calculator</a>
+                    <a class="btn btn-secondary btn-warning" href="/binary"><i class="fab fa-google"></i> Binary Calculator</a> 
+                </div>
+                </div>
+
+                <div class="button-icon-btn">
+                    <a class="btn btn-secondary btn-info" href="web"><i class="fas fa-calculator"></i> Website Bandwidth Calculator</a>
+                    <a class="btn btn-secondary btn-danger" href=""><i class="fas fa-calculator"></i> Data Unit Converter</a>
+                    <a class="btn btn-secondary btn-dark" href="/generator"><i class="fas fa-calculator"></i> Password Generator</a>   
+            </div>
+        </div>
+    </div>
+   
+ <%- include('./includes/end.ejs') %>
