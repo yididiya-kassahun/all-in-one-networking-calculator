@@ -6,7 +6,7 @@
             <h2>Binary Calculator</h2>
             <hr>
             <div class="card shadow-sm p-3 mb-5 bg-white rounded">
-                
+                <form action="/convertBtoD" method="post">
                             <div class="card-header">
                                 <h3>Convert Binary Value to Decimal Value</h3>
                                 </div>
@@ -14,15 +14,17 @@
                                     <div class="form-check form-check-inline">
                                         <div class="row">
                                             <label class="col" for="">Binary Value</label>
-                                            <input class="form-control col" type="text" placeholder="100110101"/>
+                                            <input class="form-control col" name="binary" type="text" placeholder="100110101"/>
                                           
                                         </div>
         
                                         <div style="align-items: center;">
-                                            <button class="btn btn-info">Calculate</button>
+                                            <button type="submit" class="btn btn-info">Calculate</button>
                                         </div>
+                                        <div style="margin-top:30px; background-color:azure"><h3>The Result is = <%= decimalValue %></h3></div>
                                       </div>
                                 </div>
+                                </form>
                             </div>
                     
             </div>
