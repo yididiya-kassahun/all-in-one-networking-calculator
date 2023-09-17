@@ -31,7 +31,7 @@
 
             <div class="row">
                 <div class="card shadow-sm p-3 mb-5 bg-white rounded">
-                    
+                    <form action="/convertDtoB" method="post">
                                 <div class="card-header">
                                     <h3>Convert Decimal Value to Binary Value</h3>
                                     </div>
@@ -39,15 +39,18 @@
                                         <div class="form-check form-check-inline">
                                             <div class="row">
                                                 <label class="col" for="">Decimal Value</label>
-                                                <input class="form-control col" type="text" placeholder="167"/>
+                                                <input class="form-control col" name="decimalVal" type="text" placeholder="167"/>
                                               
                                             </div>
             
                                             <div style="align-items: center;">
-                                                <button class="btn btn-info">Calculate</button>
+                                                <button type="submit" class="btn btn-info">Calculate</button>
                                             </div>
+                                        <div style="margin-top:30px; background-color:azure"><h3>The Result is = <%= binaryValue %></h3></div>
+
                                           </div>
                                     </div>
+                                    </form>
                                 </div>
                         
                 </div>
