@@ -4,36 +4,38 @@
     <div class="container">
         <div class="row" style="margin-top: 5%;">
             <div class="card shadow-sm p-3 mb-5 bg-white rounded">
-                
+                <form action="/calculate.bandwidth" method="post">
                             <div class="card-header">
-                                <h3>web bandwidth calculator page</h3>
+                                <h3>web bandwidth calculator page (upload/download time)</h3>
                                 </div>
                                 <div class="card-body">
                                     <div class="form-check form-check-inline">
                                         <div class="row">
                                             <label class="col" for="">File Size</label>
-                                            <input class="form-control col" type="text" placeholder="500"/>
-                                            <select name="" id="" class="col" style="margin-left: 10px;">
-                                                <option value="">Byte (B)</option>
-                                                <option value="">KiloByte (KB)</option>
-                                                <option value="">MegaByte (MB)</option>
-                                                <option value="">GigaByte (GB)</option>
+                                            <input name="fileSize" class="form-control col" type="text" placeholder="500"/>
+                                            <select name="fileUnit" id="" class="col" style="margin-left: 10px;">
+                                                <option value="B">Byte (B)</option>
+                                                <option value="KB">KiloByte (KB)</option>
+                                                <option value="MB">MegaByte (MB)</option>
+                                                <option value="GB">GigaByte (GB)</option>
                                             </select>
                                         </div>
                                         <div class="row" style="margin-top: 10px;">
                                             <label class="col" for="">Bandwidth</label>
-                                            <input class="form-control col" type="text" placeholder="5"/>
-                                            <select name="" id="" class="col" style="margin-left: 10px;">
-                                                <option value="">bit/s</option>
-                                                <option value="">Kbit/s</option>
-                                                <option value="">Mbit/s</option>
-                                                <option value="">Gbit/s</option>
+                                            <input name="speed" class="form-control col" type="text" placeholder="5"/>
+                                            <select name="unitPerSecond" id="" class="col" style="margin-left: 10px;">
+                                                <option value="b/s">bit/s</option>
+                                                <option value="k/s">Kbit/s</option>
+                                                <option value="m/s">Mbit/s</option>
+                                                <option value="g/s">Gbit/s</option>
                                             </select>
                                         </div>
                                         <divt style="align-items: center;">
-                                            <button class="btn btn-info">Calculate</button>
+                                            <button type="submit" class="btn btn-info">Calculate</button>
                                         </div>
+                                        <div style="margin-top:30px; background-color:azure"><h3>The upload/download time is = <%= speedValue %></h3></div>
                                       </div>
+                                      </form>
                                 </div>
                             </div>
                     
