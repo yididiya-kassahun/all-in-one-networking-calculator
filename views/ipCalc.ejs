@@ -2,8 +2,8 @@
 
 <body>
 
-    <!-- Main Menu area End-->
-	<!-- Breadcomb area Start-->
+    <%- include('./includes/nav.ejs') %>
+
 	<div>
 		<div class="container">
 			<div class="row" style="margin-top: 5%;">
@@ -135,15 +135,37 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>
-                                <button type="submit" class="btn btn-primary">Calculate</button>
+                            <td colspan="2">
+                                <button type="submit" class="btn btn-primary" style="margin-left: 40%;">Calculate</button>
                             </td>
                         </tr>
                     </form>
                 </table>
-                      
-                          
-                    
+                <div style="margin-top:30px;">
+                    <table id="detailsTable" style="border:1px solid;background-color:azure">
+                    <tr>
+                      <td>Subnets</td>
+                      <td><%= subnets %></td>
+                    </tr>
+                    <tr>
+                      <td>Hosts</td>
+                      <td><%= hosts %></td>
+                    </tr>
+                    <tr>
+                        <td>Total Number of Usable Hosts</td>
+                        <td><%= usableHosts %></td>
+                      </tr>
+                      <tr>
+                        <td>Ip Address Class</td>
+                        <td><%= networkClass %></td>
+                      </tr>
+                      <tr>
+                        <td>CIDR Notation:</td>
+                        <td>/<%= subnetMask %></td>
+                      </tr>
+                    </table>
+                  
+                  </div>
                     </div>
                 </div>
             </div>

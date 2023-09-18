@@ -15,13 +15,13 @@ exports.binaryPage = (req, res, next) => {
       let constNum = [];
       let values = {};
       let num = 1;
-      console.log(binaryArr);
+   //   console.log(binaryArr);
       for (let i = binaryArr.length-1; i >= 0; i--) {
         constNum.push(num);
         num *= 2;
 
-         console.log(num);
-         console.log(binaryArr[i]);
+        //  console.log(num);
+        //  console.log(binaryArr[i]);
       }
       binaryArr.reverse();
 

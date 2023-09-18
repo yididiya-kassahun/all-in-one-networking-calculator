@@ -1,12 +1,5 @@
 /*-----------------------------------------------------------------------------------
 
-    Template Name: Notika - Notika Admin Template 
-    Template URI: 
-    Description: Notika Admin Template is a responsive admin template based on the famous Bootstrap framework it's easy to edit and customize by documentation.
-    Author: lucidtemplate
-    Author URI: 
-    Version: 1.0
-
 -----------------------------------------------------------------------------------
     
     CSS INDEX
@@ -84,7 +77,35 @@ margin: 0;
 padding: 0
 }
 .clear{clear:both}
+
+/* Apply some basic styling to the table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Style the table header */
+  th {
+    background-color: #f2f2f2;
+    text-align: left;
+    padding: 10px;
+  }
+  
+  /* Style the table cells */
+  td {
+    border: 1px solid #ddd;
+    padding: 10px;
+  }
+  
+  /* Add some zebra striping to the table rows */
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+
+  
 body {}
+
 .mg-tb-40{
 	margin:40px 0px;
 }
@@ -184,7 +205,7 @@ body {}
 /*  2.  Header Top CSS
 /*----------------------------------------*/
 .header-top-area, .footer-copyright-area{
-	background:#00c292;
+	background:#b3b5b5;
 }
 .logo-area{
 	padding:14px 0px;
@@ -193,14 +214,11 @@ body {}
 	float: right;
 }
 .nav.notika-top-nav .open>a, .nav.notika-top-nav .open>a:focus, .nav.notika-top-nav .open>a:hover {
-    background: #00c292;
-    border-color: 0px solid #00c292;
+    background: #b3b5b5;
+    border-color: 0px solid #b3b5b5;
 	
 }
-.nav.notika-top-nav>li>a:focus, .nav.notika-top-nav>li>a:hover {
-    text-decoration: none;
-    background-color: #00c292;
-}
+
 .navbar-nav>li>a{
 	color:#fff;
 	padding: 20px 0px 20px 30px;
