@@ -11,48 +11,77 @@
             <div class="card shadow-sm p-3 mb-5 bg-white rounded">
                 
                             <div class="card-header">
-                                <h3>Generate</h3>
+                                <h4>Generate a strong password using our password generator</h4>
                                 </div>
                                 <div class="card-body">
                                     <div class="form-check form-check-inline">
                                         <div class="row">
                                          <form action="/generate" method="POST">
-                                            <label class="col" for="inpVal">Password Length</label>
-                                            <div class="col-12">
-                                                <input class="form-control" name="passLength" type="text" id="inpVal" value="12"/>
-                                            </div>
-                                            <div>
-                                                <input type="range" class="form-range" id="customRange1">
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox"  name="lower" id="flexCheckChecked">
-                                                <label for="">Include lower case letter (a-z)</label>
+                                          <table>
+                                          <tr>
+                                            <td>
+                                              <label class="col" for="inpVal">Password Length</label>
+                                              <div class="col-12">
+                                                  <input class="form-control" name="passLength" min="0" max="100" type="text" id="inpVal" value="12"/>
                                               </div>
+                                            </td>
+                                          </tr>
+                                          <tr>
+                                            <td>
+                                              <div>
+                                                  <input type="range" class="form-range" id="customRange1">
+                                              </div>
+                                            </td>
+                                          </tr>
+                                          <tr>
+                                            <td>
                                               <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="upper" id="flexCheckChecked">
-                                                <label for="">Include Upper case letter (A-Z)</label>
+                                                  <input class="form-check-input" type="checkbox"  name="lower" id="flexCheckChecked">
+                                                  <label for="">Include lower case letter (a-z)</label>
+                                                </div>
+                                                <div class="form-check">
+                                                  <input class="form-check-input" type="checkbox" name="upper" id="flexCheckChecked">
+                                                  <label for="">Include Upper case letter (A-Z)</label>
+                                                </div>
+                                                <div class="form-check">
+                                                  <input class="form-check-input" type="checkbox" name="number" id="flexCheckChecked">
+                                                  <label for="">Include Numbers (0-9)</label>
+                                                </div>
+                                                <div class="form-check">
+                                                  <input class="form-check-input" type="checkbox" name="symbol" id="flexCheckChecked">
+                                                  <label for="">Include Symbol (#@&*^!)9)</label>
+                                                </div>
+                                            </td>
+                                          </tr>
+                                          <tr>
+                                            <td>
+                                              <div>
+                                                  <button style="width: 100%;" type="submit" class="btn btn-dark">Generate</button>
                                               </div>
-                                              <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="number" id="flexCheckChecked">
-                                                <label for="">Include Numbers (0-9)</label>
-                                              </div>
-                                              <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="symbol" id="flexCheckChecked">
-                                                <label for="">Include Symbol (#@&*^!)9)</label>
-                                              </div>
-                                              <div style="align-items: center;">
-                                                  <button type="submit" class="btn btn-info">Calculate</button>
-                                              </div>
+                                            </td>
+                                          </tr>
+                                          </table>
                                           </form>
                                         </div>
         
                                       </div>
                                 
-                                      <h3 style="background-color: rgba(204, 204, 204, 0.248);">Generated password: <span style="color: green;"><%= resultPassword %></span> </h3>
+                                      <h3 style="background-color: rgba(204, 204, 204, 0.248);margin-top: 5%;">Generated password: <i class="fa fa-clipboard"></i> <span style="color: green;"><%= resultPassword %></span> </h3>
                                 </div>
                             </div>
                     
             </div>
         </div>
 
+        <script>
+  const range = document.getElementById('customRange1');
+  const screen = document.getElementById('inpVal');
+
+  range.addEventListener("input", function() {
+    const value = range.value;
+    screen.value = value;
+});
+
+
+        </script>
 <%- include('./includes/end.ejs') %>

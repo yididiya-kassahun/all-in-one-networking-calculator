@@ -9,6 +9,7 @@ const errorController = require("./controllers/errorController");
 //routers
 const homeRoute = require("./routes/homeRouter");
 const ipRoute = require("./routes/ipRouter");
+const calculatorRoute = require('./routes/calculator');
 //const unitRoute = require("./routes/converterRouter");
 const binaryRoute = require("./routes/binaryRouter");
 const generatorRoute = require("./routes/passGenRouter");
@@ -25,6 +26,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use(homeRoute);
 app.use(ipRoute);
+app.use(calculatorRoute);
 //app.use(unitRoute);
 app.use(binaryRoute);
 app.use(generatorRoute);

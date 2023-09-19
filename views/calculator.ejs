@@ -1,0 +1,61 @@
+<%- include('./includes/head.ejs') %>
+<%- include('./includes/calcHead.ejs') %>
+
+<body>
+    <%- include('./includes/nav.ejs') %>
+ 
+    <div class="calcBody">
+    <div id="container">
+        <div class="display">
+            <input id="screen" type="text" placeholder="0">
+        </div>
+        <div class="row" style="margin-top: 5%;">
+                 <div class="card shadow-sm p-3 mb-5 bg-white rounded">
+                    <div class="buttons">
+                        <div class="row">
+                            <button style="background-color: rgb(193, 135, 0);color:#fff">CE</button>
+                            <button>x!</button>
+                            <button>(</button>
+                            <button>)</button>
+                            <button>%</button>
+                            <button onclick="AC()" style="background-color: rgb(0, 193, 138);color:#fff">AC</button>
+                        </div>
+                        <div class="row">
+                            <button onclick="sin()">sin</button>
+                            <button onclick="pi()">π</button>
+                            <button class="bt">9</button>
+                            <button class="bt">8</button>
+                            <button class="bt">7</button>
+                            <button>+</button>
+                        </div>
+                        <div class="row">
+                            <button onclick="cos()">cos</button>
+                            <button onclick="log()">log</button>
+                            <button class="bt">6</button>
+                            <button class="bt">5</button>
+                            <button class="bt">4</button>
+                            <button>*</button>
+                        </div>
+                        <div class="row">
+                            <button onclick="sin()">tan</button>
+                            <button onclick="sqr()">√</button>
+                            <button class="bt">3</button>
+                            <button class="bt">2</button>
+                            <button class="bt">1</button>
+                            <button>/</button>
+                        </div>
+                        <div class="row">
+                            <button onclick="e()">e</button>
+                            <button onclick="pow()">x <span style="position: relative; bottom: .4em; right: .1em;">y</span></button>
+                            <button class="bt">0</button>
+                            <button>.</button>
+                            <button style="background-color: rgb(0, 138, 193);color:#fff">=</button>
+                            <button>+</button>
+                        </div>
+                    </div>
+                 </div>
+             </div>
+            </div>
+        </div>
+    </div>
+<%- include('./includes/calcEnd.ejs') %>

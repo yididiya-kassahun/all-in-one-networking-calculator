@@ -62,7 +62,7 @@ function generatePassword(lower,upper,number,symbol,passwordLeng){
      if(typesCount === 0){
       return '';
      }
-console.log('types count '+typesCount);
+//console.log('types count '+typesCount);
      for (let i = 0; i < passwordLeng; i += typesCount) {
       typeArr.forEach(type => {
         const names = Object.keys(type)[0];

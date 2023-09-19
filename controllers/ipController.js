@@ -1,11 +1,15 @@
 exports.ipPage = (req, res, next) => {
     res.render("ipCalc", {
       pageTitle: "ip calculator page",
+      ipAddress:'',
       subnets:'',
       hosts: '',
       usableHosts:'',
       networkClass:'',
-      subnetMask:''
+      subnetMask:'',
+      hostRange:'',
+      networkAddress:'',
+      usableIpRange:''
     });
   };
   
@@ -18,20 +22,43 @@ exports.ipPage = (req, res, next) => {
   const networkDetails = calculateNetworkDetails(ipAddress, subnetMask);
   const calculateSubnet = calculateSubnetMask(subnetMask);
   const networkClass = getIpAddressClass(ipAddress);
-  console.log(calculateSubnet,networkClass);
+
+ // const usableIpRange = 
+  console.log(networkDetails);
+
+  //console.log(calculateSubnet,networkClass);
   
   return res.render("ipCalc",{
     pageTitle: "Ip calculator page",
+    ipAddress:ipAddress,
     subnets:calculateSubnet.subnets,
     hosts: calculateSubnet.hosts,
     usableHosts:calculateSubnet.usableHosts,
     subnetMask:calculateSubnet.subnetMask,
     networkClass:networkClass,
+    hostRange:calculateSubnet.hostRange,
+    networkAddress:networkDetails.networkAddress,
+    usableIpRange:networkDetails.usableIpRange
    })
   };
   
   function calculateNetworkDetails(ipAddress, subnetMask) {
-   
+     // network address
+     const octets = ipAddress.split('.');
+     octets[3] = 0;
+     const networkAddress = octets.join('.');
+
+     const firstIpArr = [...octets];
+     firstIpArr[3] = 1;
+
+     const lastIpArr = [...octets];
+     lastIpArr[3] = 254;
+     const usableIpRange = [firstIpArr.join('.'),' - ',lastIpArr.join('.')];
+    
+     return netDetails = {
+      networkAddress:networkAddress,
+      usableIpRange:usableIpRange
+     };
   }
 
   function getIpAddressClass(ipAddress){
@@ -128,15 +155,24 @@ for (let k = 0; k < theIp.length; k++) {
 const subnetNo = Math.pow(2, countOnes);
 const hostNo = Math.pow(2, countZeros);
 const usableHostNo = Math.pow(2, countZeros)-2;
+const hostRange = [0,' - ',hostNo-1];
 
 return details = {
   subnets:subnetNo.toLocaleString(),
   hosts:hostNo.toLocaleString(),
   usableHosts:usableHostNo.toLocaleString(),
-  subnetMask:subnetMask
+  subnetMask:subnetMask,
+  hostRange:hostRange
 }
 // console.log("no. of subnets "+subnetNo.toLocaleString());
 // console.log("no. of hosts  "+hostNo.toLocaleString());
 // console.log("no. of usable hosts  "+usableHostNo.toLocaleString());
 
+  }
+
+  exports.IPv6Calculator = (req,res,next) => {
+    const prefix = req.body.prefix;
+    const ipv6 = req.body.ipv6;
+
+    console.log(prefix,ipv6);
   }

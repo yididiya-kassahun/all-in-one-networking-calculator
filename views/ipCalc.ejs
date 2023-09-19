@@ -33,7 +33,7 @@
                         </div>
                        <table>
                            <div class="form-group">
-                   <form action="/ipv4calculate" method="POST">
+                   <form action="/ipv4calculate" method="POST" id="eventForm">
                               <tr>
                             <td>
                                 <label for="">
@@ -143,7 +143,11 @@
                 </table>
                 <div style="margin-top:30px;">
                     <table id="detailsTable" style="border:1px solid;background-color:azure">
-                    <tr>
+                        <tr>
+                            <td>Ip Address</td>
+                            <td><%= ipAddress %></td>
+                          </tr>
+                        <tr>
                       <td>Subnets</td>
                       <td><%= subnets %></td>
                     </tr>
@@ -152,12 +156,24 @@
                       <td><%= hosts %></td>
                     </tr>
                     <tr>
+                        <td>Usable Ip Range</td>
+                        <td><%= usableIpRange %></td>
+                      </tr>
+                    <tr>
+                        <td>Network Address</td>
+                        <td><%= networkAddress %></td>
+                      </tr>
+                    <tr>
                         <td>Total Number of Usable Hosts</td>
                         <td><%= usableHosts %></td>
                       </tr>
                       <tr>
                         <td>Ip Address Class</td>
                         <td><%= networkClass %></td>
+                      </tr>
+                      <tr>
+                        <td>Host Range:</td>
+                        <td><%= hostRange %></td>
                       </tr>
                       <tr>
                         <td>CIDR Notation:</td>
@@ -180,7 +196,7 @@
                    <hr>
                 </div>
                <table>
-
+    <form action="/ipv6calculate" method="post">
                 <tr>
                     <td>
                         <label for="">
@@ -191,16 +207,24 @@
                         <div class="form-group">
                            
                             <div>
-                                <select class="form-select" aria-label="Default select example">
+                                <select class="form-select" name="prefix" aria-label="Default select example">
                     
-                                    <option value="1" selected>/23</option>
-                                    <option value="1">/23</option>
-                                    <option value="1">/23</option>
-                                    <option value="1">/23</option>
-                                    <option value="1">/23</option>
-                                    <option value="1">/23</option>
-                                    <option value="1">/23</option>
-                                    <option value="1">/23</option>
+                                    <option value="1" selected>/1</option>
+                                    <option value="2">/2</option>
+                                    <option value="3">/3</option>
+                                    <option value="4">/4</option>
+                                    <option value="5">/5</option>
+                                    <option value="6">/6</option>
+                                    <option value="7">/7</option>
+                                    <option value="8">/8</option>
+                                    <option value="9">/9</option>
+                                    <option value="10">/10</option>
+                                    <option value="11">/11</option>
+                                    <option value="12">/12</option>
+                                    <option value="13">/13</option>
+                                    <option value="14">/14</option>
+                                    <option value="15">/15</option>
+                                    <option value="16">/16</option>
                                  
                                   </select>
                             </div>
@@ -210,7 +234,7 @@
                 <tr>
                     <td>
                         <label for="">
-                            <h4>IP Address</h4>
+                            <h4>IPv6 Address</h4>
                          </label>
                     </td>
                     <td>
@@ -221,16 +245,20 @@
                                     <i class="bi bi-ethernet"></i>
                                 </div>
                                 <div class="nk-int-st">
-                                    <input type="text" class="form-control" data-mask="999.999.999.9999">
+                                    <input type="text" name="ipv6" class="form-control" data-mask="999.999.999.9999">
                                 </div>
                             </div>
                         </div>
                     </td>
                 </tr>
+                <tr>
+                    <td colspan="2">
+                        <button type="submit" class="btn btn-primary" style="margin-left: 40%;"> Calculate </button>
+                    </td>
+                </tr>
+                </form>
                </table>
-              
-                  
-            
+        
             </div>
         </div>
     </div>
