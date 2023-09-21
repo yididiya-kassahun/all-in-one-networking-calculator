@@ -60,13 +60,17 @@
             <div style="border-radius: 5px; background-color: rgba(182, 181, 181, 0.482);font-size: 20px;"> 
                 <h3 style="margin-top: 10px;text-align: center;">ax<span style="position: relative; bottom: .4em; right: .1em;font-size:20px;">2</span> + bx + c = 0</h3>
                 <div style="margin-left:20%">
-                  <label for="">a = </label> <input type="number">
-                  <label for="">b = </label> <input type="number">
-                  <label for="">c = </label> <input type="number">
+                  <label for="">a = </label> <input type="number" id="aValue">
+                  <label for="">b = </label> <input type="number" id="bValue">
+                  <label for="">c = </label> <input type="number" id="cValue">
                 </div>
                 <hr style="background-color: #000;">
-                <button class="btn btn-primary" style="margin-left: 45%;">Calculate</button>
+                <button onclick="quadratic()" class="btn btn-primary" style="margin-left: 45%;">Calculate</button>
             </div>
+            <h3> <u>Solution:</u> </h3> <br>
+            <div><h3>The value of x = <span style="color: rgb(4, 130, 220);" id="resultX"></span></h3></div> <br> <br>
+            <img src="../img/quadratic.png" class="rounded mx-auto d-block" width="800px" height="500px">
+
        </div>
       </div>
      </div>
@@ -118,6 +122,47 @@ const maxDenominator = 10000;
  denominatorVal.value = denominator;
 
 }
-    
+
+function quadratic(){
+  const aNum = document.getElementById('aValue');
+  const bNum = document.getElementById('bValue');
+  const cNum = document.getElementById('cValue');
+  let resultX = document.getElementById('resultX');
+
+  let a = parseInt(aNum.value);
+  let b = parseInt(bNum.value);
+  let c = parseInt(cNum.value);
+
+  let num = Math.pow(b,2) - (4*a*c);
+  let complexNum = complexSquareRoot(num);
+
+  let x1 = -b/(2*a) +" ± "+ complexDivideByReal(complexNum,2*a);
+
+  resultX.innerHTML = x1;
+  console.log(x1);
+}
+
+// Represent negative square root with complex number
+function complexSquareRoot(x) {
+  if (x >= 0) {
+    return Math.sqrt(x);
+  } else {
+    const absX = Math.sqrt(Math.abs(x));
+    return absX + "i";
+  }
+}
+
+function complexDivideByReal(complex, real) {
+  // Extract real and imaginary parts of the complex number
+  const [a, b] = complex.split("+").map(part => parseFloat(part));
+
+  // Calculate the real and imaginary parts of the result
+  const realPart = a / real;
+  const imaginaryPart = b / real;
+
+  // Construct the result in the form "a + bi"
+  return `${realPart}i`;
+}
+ 
     </script>
 <%- include('./includes/end.ejs') %>
