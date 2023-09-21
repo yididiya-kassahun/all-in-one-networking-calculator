@@ -9,7 +9,115 @@
             <div class="card shadow-sm p-3 mb-5 bg-white rounded">
                 <h3>math calculator</h3>
                                 </div>
-                            </div>
+                           
+    <div class="col" style="width: 20%;">
+        <div class="card shadow-sm p-3 mb-5 bg-white rounded">
+            <h4>Fraction to Decimal calculator</h4>
+          <table>
+            <!-- <form action="/ftod" method="post"> -->
+                 <tr>
+                     <td>
+                          <div style="width: 60%;">
+                            <input type="number" name="uNum" id="uNum">
+                            <hr style="background-color: #000000;">
+                            <input type="number" name="lNum" id="lNum"><br> <br>
+                            <button onclick="calculatefTod()" class="btn btn-primary">Calculate</button>
+                          </div>              
+                        </td>
+                        <td>
+                            <input type="number" disabled id="display">
+                        </td>
+                    </tr>
+                <!-- </form> -->
+                </table>
+            </div>
+    </div>
+      <div class="col">
+        <div class="card shadow-sm p-3 mb-5 bg-white rounded" style="display: flex;">
+            <h4>Decimal to Fraction calculator</h4>
+           <table style="border: none;">
+            <tr>
+                <td>
+                    <input type="number" id="dNum"> <br> <br> <br>
+                    <button onclick="calculateDtoF()" class="btn btn-primary">Calculate</button>
+                </td>
+                <td>
+                    <div style="width:70%;">
+                        <input type="number" id="numerator" disabled>
+                        <hr style="background-color: #000;">
+                        <input type="number"  id="denominator" disabled>
+
+                      </div>  
+                </td>
+            </tr>
+           </table>         
             </div>
         </div>
+    </div>
+    <div class="row">
+        <div class="card shadow-sm p-3 mb-5 bg-white rounded">
+            <h4>Quadratic Formula Calculator</h4>
+            <div style="border-radius: 5px; background-color: rgba(182, 181, 181, 0.482);font-size: 20px;"> 
+                <h3 style="margin-top: 10px;text-align: center;">ax<span style="position: relative; bottom: .4em; right: .1em;font-size:20px;">2</span> + bx + c = 0</h3>
+                <div style="margin-left:20%">
+                  <label for="">a = </label> <input type="number">
+                  <label for="">b = </label> <input type="number">
+                  <label for="">c = </label> <input type="number">
+                </div>
+                <hr style="background-color: #000;">
+                <button class="btn btn-primary" style="margin-left: 45%;">Calculate</button>
+            </div>
+       </div>
+      </div>
+     </div>
+    </div>
+
+    <script>
+const upperNum = document.getElementById('uNum');
+const lowerNum = document.getElementById('lNum');
+const screen1 = document.getElementById('display');
+
+const dNum = document.getElementById('dNum');
+
+const numeratorVal = document.getElementById('numerator');
+const denominatorVal = document.getElementById('denominator');
+
+function calculatefTod(){
+    let fNum = parseFloat(upperNum.value);
+    let sNum = parseFloat(lowerNum.value);
+    
+    let result = fNum/sNum;
+    screen1.value = result;
+    console.log(fNum,sNum);
+}
+
+function calculateDtoF(){
+let decimal = parseFloat(dNum.value);
+
+// maximum denominator for more accurate results
+const maxDenominator = 10000;
+  
+  // (GCD) using Euclidean algorithm
+  function gcd(a, b) {
+    if (b === 0) {
+      return a;
+    }
+    return gcd(b, a % b);
+  }
+
+  // Calculate the initial numerator and denominator
+  let numerator = Math.round(decimal * maxDenominator);
+  let denominator = maxDenominator;
+
+  // Reduce the fraction by dividing both numerator and denominator by their GCD
+  const commonDivisor = gcd(numerator, denominator);
+  numerator /= commonDivisor;
+  denominator /= commonDivisor;
+
+ numeratorVal.value = numerator;
+ denominatorVal.value = denominator;
+
+}
+    
+    </script>
 <%- include('./includes/end.ejs') %>
