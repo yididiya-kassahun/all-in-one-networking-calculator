@@ -2,12 +2,24 @@
  let screen = document.getElementById('screen');
  let button = document.querySelectorAll('.bt');
 
+let displayValue = '';
+
  for(item of button){
     item.addEventListener('click', (e) => {
        let btnValue = e.target.innerText;
         screen.value += btnValue;
+         displayValue =  screen.value;
     });
  }
+
+function calculate() {
+    try {
+        displayValue = eval(displayValue);
+        screen.value = displayValue;
+    } catch (error) {
+        screen.value = 'Error';
+    }
+}
 
 function pi(){ screen.value = 3.14159265358979 }
 function AC(){ screen.value = '' }
@@ -17,6 +29,16 @@ function tan(){ screen.value = Math.tan(screen.value) }
 function sqr(){ screen.value = Math.sqrt(screen.value) }
 function log(){ screen.value = Math.log(screen.value) }
 function e(){ screen.value = 2.71828182846 }
+
+function fact(){
+   let num = screen.value;
+   let fact = 1;
+   for (let i = 1; i <= num; i++) {
+     fact *= i;
+   }
+   screen.value = fact;
+
+}
 
 </script>
 

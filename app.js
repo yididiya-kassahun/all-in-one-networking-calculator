@@ -10,6 +10,7 @@ const errorController = require("./controllers/errorController");
 const homeRoute = require("./routes/homeRouter");
 const ipRoute = require("./routes/ipRouter");
 const calculatorRoute = require('./routes/calculator');
+const mathRoute = require('./routes/mathRouter');
 //const unitRoute = require("./routes/converterRouter");
 const binaryRoute = require("./routes/binaryRouter");
 const generatorRoute = require("./routes/passGenRouter");
@@ -29,6 +30,7 @@ app.use(ipRoute);
 app.use(calculatorRoute);
 //app.use(unitRoute);
 app.use(binaryRoute);
+app.use(mathRoute);
 app.use(generatorRoute);
 app.use(webRoute);
 
